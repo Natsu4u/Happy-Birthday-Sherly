@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 600px;
+  margin: 80px auto 0 auto;
+  background: rgba(255,255,255,0.8);
+  border-radius: 30px;
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+  padding: 40px 30px 60px 30px;
+  text-align: center;
+  position: relative;
+}
+
+.heart-animation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.heart {
+  width: 80px;
+  height: 80px;
+  background: red;
+  position: relative;
+  transform: rotate(-45deg);
+  animation: beating 1s infinite;
+}
+
+.heart:before, .heart:after {
+  content: '';
+  position: absolute;
+  background: red;
+  border-radius: 50%;
+}
+
+.heart:before {
+  width: 80px;
+  height: 80px;
+  top: -40px;
+  left: 0;
+}
+.heart:after {
+  width: 80px;
+  height: 80px;
+  top: 0;
+  left: 40px;
+}
+
+@keyframes beating {
+  0%, 100% { transform: scale(1) rotate(-45deg);}
+  20% { transform: scale(1.1) rotate(-45deg);}
+  40% { transform: scale(1.2) rotate(-45deg);}
+  60% { transform: scale(1.1) rotate(-45deg);}
+  80% { transform: scale(1) rotate(-45deg);}
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.8em;
+  margin: 0 0 20px 0;
+  color: #e17055;
+  text-shadow: 1px 3px 10px #fff5e1;
+}
+
+.greeting {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.highlight {
+  color: #d72660;
+  font-weight: bold;
+  font-size: 1.1em;
+  background: linear-gradient(90deg, #ffecd2 0%, #fcb69f 100%);
+  padding: 2px 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #fff9;
+}
+
+#confetti-btn {
+  padding: 15px 40px;
+  background: linear-gradient(90deg, #d72660, #fbb040);
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 1.2em;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(247, 185, 36, 0.2);
+  transition: background 0.3s;
+}
+
+#confetti-btn:hover {
+  background: linear-gradient(90deg, #fbb040, #d72660);
+}
+
+#confetti {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+}
